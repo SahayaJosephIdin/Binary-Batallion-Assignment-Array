@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int findGCD(vector<int>& nums) {
+        int n=nums.size();
+        int minvalue=INT_MAX;
+        int maxvalue=INT_MIN;
+        for(int i=0;i<n;i++){
+            minvalue=min(minvalue,nums[i]);
+            maxvalue=max(maxvalue,nums[i]);
+        }
+        for(int i=minvalue;i>=1;i--){
+            if(minvalue%i==0&&maxvalue%i==0){
+                return i;
+            }
+        }
+        return 0;
+    }
+};
